@@ -14,7 +14,7 @@ public class UserController {
         return "user/add";
     }
     @PostMapping
-    public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
+    public String processAddUserForm(Model model, @ModelAttribute User user, @RequestParam String verify) {
         model.addAttribute("user", user);
         model.addAttribute("verify", verify);
         model.addAttribute("username", user.getUsername());
